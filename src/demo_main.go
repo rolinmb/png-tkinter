@@ -29,7 +29,7 @@ func savePng(fname string, newPng *image.RGBA) {
     fmt.Println("Successfully created/rewritten "+fname+"\n")
 }
 
-func calcColor1(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint8, uint8, uint8) {
+func calcColor1(x,y,geometrySize int, scale,chaos,colorFactor float64) (uint8, uint8, uint8) {
     floatX := float64(x)
     floatY := float64(y)
 	patternVal := math.Sin(floatX*scale) + math.Cos(floatY*scale)
@@ -45,7 +45,7 @@ func calcColor1(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint
 	return r, g, b
 }
 
-func trippyPng1(fname string, scale, chaos, colorFactor float64, geometrySize, width, height int) {
+func trippyPng1(fname string, scale,chaos,colorFactor float64, geometrySize,width,height int) {
     newPng := image.NewRGBA(image.Rect(0, 0, width, height))
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
@@ -56,7 +56,7 @@ func trippyPng1(fname string, scale, chaos, colorFactor float64, geometrySize, w
     savePng(fname, newPng)
 }
 
-func calcColor2(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint8, uint8, uint8) {
+func calcColor2(x,y,geometrySize int, scale,chaos,colorFactor float64) (uint8, uint8, uint8) {
     floatX := float64(x)
     floatY := float64(y)
 	patternVal := math.Sin(floatX*scale) + math.Cos(floatY*scale)
@@ -72,7 +72,7 @@ func calcColor2(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint
 	return r, g, b
 }
 
-func trippyPng2(fname string, scale, chaos, colorFactor float64, geometrySize, width, height int) {
+func trippyPng2(fname string, scale,chaos,colorFactor float64, geometrySize,width,height int) {
 	newPng := image.NewRGBA(image.Rect(0,0,width,height))
     for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
@@ -83,7 +83,7 @@ func trippyPng2(fname string, scale, chaos, colorFactor float64, geometrySize, w
     savePng(fname, newPng)
 }
 
-func calcColor3(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint8, uint8, uint8) {
+func calcColor3(x,y,geometrySize int, scale,chaos,colorFactor float64) (uint8, uint8, uint8) {
 	floatX := float64(x)
     floatY := float64(y)
 	patternVal := math.Sin(floatX*scale) + math.Cos(floatY*scale)
@@ -110,7 +110,7 @@ func trippyPng3(fname string, scale, chaos, colorFactor float64, geometrySize, w
     savePng(fname, newPng)
 }
 
-func clamp(value, min, max int) int {
+func clamp(value,min,max int) int {
 	if value < min {
 		return min
 	}
@@ -120,7 +120,7 @@ func clamp(value, min, max int) int {
 	return value
 }
 
-func applyDistortion(x, y int) (int, int) {
+func applyDistortion(x,y int) (int, int) {
 	amplitude := 50.0
 	frequency := 0.02
 	phase := 0.0
@@ -131,7 +131,7 @@ func applyDistortion(x, y int) (int, int) {
 	return dx, dy
 }
 
-func calcColor4(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint8, uint8, uint8) {
+func calcColor4(x,y,geometrySize int, scale,chaos,colorFactor float64) (uint8, uint8, uint8) {
 	floatX := float64(x)
     floatY := float64(y)
 	patternVal := math.Sin(floatX*scale) + math.Cos(floatY*scale)
@@ -147,7 +147,7 @@ func calcColor4(x, y, geometrySize int, scale, chaos, colorFactor float64) (uint
 	return r, g, b
 }
 
-func trippyPng4(fname string, scale, chaos, colorFactor float64, geometrySize, width, height int) {
+func trippyPng4(fname string, scale,chaos,colorFactor float64, geometrySize,width,height int) {
 	newPng := image.NewRGBA(image.Rect(0, 0, width, height))
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
